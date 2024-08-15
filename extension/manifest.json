@@ -1,7 +1,7 @@
 {
 	"manifest_version": 3,
 	"name": "TornTools",
-	"version": "7.3.0",
+	"version": "7.4.0",
 	"description": "Several tools for Torn.",
 	"icons": { "16": "resources/images/icon_16.png", "48": "resources/images/icon_48.png", "128": "resources/images/icon_128.png" },
 	"action": { "default_title": "TornTools", "default_popup": "pages/popup/popup.html", "default_icon": "resources/images/icon_128.png" },
@@ -75,7 +75,6 @@
 				"scripts/global/elements/checkbox/ttCheckbox.css",
 				"scripts/global/elements/checkbox-list/ttCheckboxList.css",
 				"scripts/global/elements/slider/ttSlider.css",
-				"scripts/global/elements/table/ttTable.css",
 				"scripts/global/elements/textbox/ttTextbox.css",
 				"scripts/global/elements/checkbox-duo/ttCheckboxDuo.css",
 				"scripts/features/align-left/ttAlignLeft.css",
@@ -98,20 +97,13 @@
 				"scripts/global/functions/utilities.js",
 				"scripts/global/functions/torn.js",
 				"scripts/global/functions/api.js",
-				"scripts/global/functions/csv.js",
 				"scripts/global/featureManager.js",
 				"scripts/global/elements/checkbox/ttCheckbox.js",
 				"scripts/global/elements/checkbox-list/ttCheckboxList.js",
 				"scripts/global/elements/select/ttSelect.js",
 				"scripts/global/elements/slider/ttSlider.js",
-				"scripts/global/elements/table/ttTable.js",
-				"scripts/global/elements/table/ttTableRow.js",
-				"scripts/global/elements/table/ttTableCell.js",
-				"scripts/global/elements/table/ttHeaderCell.js",
 				"scripts/global/elements/textbox/ttTextbox.js",
 				"scripts/global/elements/checkbox-duo/ttCheckboxDuo.js",
-				"resources/images/svg-icons/cross.js",
-				"resources/images/svg-icons/back.js",
 				"resources/images/svg-icons/icon_128.js",
 				"scripts/content/global/ttGlobal.entry.js",
 				"scripts/features/align-left/ttAlignLeft.entry.js",
@@ -134,6 +126,7 @@
 				"scripts/features/stacking-mode/ttStackingMode.css"
 			],
 			"js": [
+				"resources/images/svg-icons/cross.js",
 				"scripts/content/global/ttGlobal.js",
 				"scripts/features/colored-chat/ttColoredChat.js",
 				"scripts/features/search-chat/ttSearchChat.js",
@@ -191,6 +184,7 @@
 				"scripts/features/npc-loot-times/ttNPCLootTimes.css"
 			],
 			"js": [
+				"resources/images/svg-icons/back.js",
 				"scripts/features/hide-level-upgrade/ttHideLevelUpgrade.js",
 				"scripts/features/oc-time/ttOCTime.js",
 				"scripts/features/faction-oc-time/ttFactionOCTime.js",
@@ -361,6 +355,7 @@
 			],
 			"js": [
 				"scripts/global/functions/filters.js",
+				"scripts/global/functions/csv.js",
 				"scripts/global/functions/torn-items.js",
 				"scripts/content/factions/ttFactions.js",
 				"scripts/features/drug-details/ttDrugDetails.js",
@@ -433,6 +428,7 @@
 			"matches": ["https://www.torn.com/index.php*"],
 			"css": [
 				"scripts/global/functions/filters.css",
+				"scripts/global/elements/table/ttTable.css",
 				"scripts/features/effective-stats/ttEffectiveStats.css",
 				"scripts/features/live-networth/ttLiveNetworth.css",
 				"scripts/features/drug-details/ttDrugDetails.css",
@@ -445,6 +441,7 @@
 			],
 			"js": [
 				"scripts/global/functions/filters.js",
+				"scripts/global/elements/table/ttTable.js",
 				"scripts/features/effective-stats/ttEffectiveStats.js",
 				"scripts/features/live-networth/ttLiveNetworth.js",
 				"scripts/features/drug-details/ttDrugDetails.js",
@@ -578,6 +575,7 @@
 		{
 			"matches": ["https://www.torn.com/profiles.php*"],
 			"css": [
+				"scripts/global/elements/table/ttTable.css",
 				"scripts/features/profile-notes/ttProfileNotes.css",
 				"scripts/features/status-indicator/ttStatusIndicator.css",
 				"scripts/features/friendly-fire/ttFriendlyFire.css",
@@ -589,6 +587,8 @@
 			],
 			"js": [
 				"vendor/sortable/sortable.js",
+				"resources/images/svg-icons/cross.js",
+				"scripts/global/elements/table/ttTable.js",
 				"scripts/global/team.js",
 				"scripts/features/profile-id/ttProfileID.js",
 				"scripts/features/profile-notes/ttProfileNotes.js",
@@ -680,11 +680,13 @@
 		{
 			"matches": ["https://www.torn.com/travelagency.php*"],
 			"css": [
+				"scripts/global/elements/table/ttTable.css",
 				"scripts/features/travel-table/ttTravelTable.css",
 				"scripts/features/flying-time/ttFlyingTime.css",
 				"scripts/features/travel-cooldowns/ttTravelCooldowns.css"
 			],
 			"js": [
+				"scripts/global/elements/table/ttTable.js",
 				"scripts/content/travelagency/ttTravelAgency.js",
 				"scripts/features/travel-table/ttTravelTable.js",
 				"scripts/features/flying-time/ttFlyingTime.js",
@@ -695,25 +697,25 @@
 		{
 			"matches": ["https://www.torn.com/war.php?step=warreport*"],
 			"css": ["scripts/features/csv-war-report/ttCSVWarReport.css"],
-			"js": ["scripts/features/csv-war-report/ttCSVWarReport.js"],
+			"js": ["scripts/global/functions/csv.js", "scripts/features/csv-war-report/ttCSVWarReport.js"],
 			"run_at": "document_end"
 		},
 		{
 			"matches": ["https://www.torn.com/war.php?step=rankreport*"],
 			"css": ["scripts/features/csv-ranked-war-report/ttCSVRankedWarReport.css"],
-			"js": ["scripts/features/csv-ranked-war-report/ttCSVRankedWarReport.js"],
+			"js": ["scripts/global/functions/csv.js", "scripts/features/csv-ranked-war-report/ttCSVRankedWarReport.js"],
 			"run_at": "document_end"
 		},
 		{
 			"matches": ["https://www.torn.com/war.php?step=raidreport*"],
 			"css": ["scripts/features/csv-raid-report/ttCSVRaidReport.css"],
-			"js": ["scripts/features/csv-raid-report/ttCSVRaidReport.js"],
+			"js": ["scripts/global/functions/csv.js", "scripts/features/csv-raid-report/ttCSVRaidReport.js"],
 			"run_at": "document_end"
 		},
 		{
 			"matches": ["https://www.torn.com/war.php?step=chainreport*"],
 			"css": ["scripts/features/csv-chain-report/ttCSVChainReport.css"],
-			"js": ["scripts/features/csv-chain-report/ttCSVChainReport.js"],
+			"js": ["scripts/global/functions/csv.js", "scripts/features/csv-chain-report/ttCSVChainReport.js"],
 			"run_at": "document_end"
 		},
 		{
@@ -738,8 +740,12 @@
 		},
 		{
 			"matches": ["https://www.torn.com/bank.php*"],
-			"css": ["scripts/features/bank-investment-info/ttBankInvestmentInfo.css"],
-			"js": ["scripts/features/bank-investment-info/ttBankInvestmentInfo.js", "scripts/features/bank-investment-due-time/ttBankInvestmentDueTime.js"],
+			"css": ["scripts/global/elements/table/ttTable.css", "scripts/features/bank-investment-info/ttBankInvestmentInfo.css"],
+			"js": [
+				"scripts/global/elements/table/ttTable.js",
+				"scripts/features/bank-investment-info/ttBankInvestmentInfo.js",
+				"scripts/features/bank-investment-due-time/ttBankInvestmentDueTime.js"
+			],
 			"run_at": "document_end"
 		},
 		{
